@@ -7,7 +7,7 @@
 
 
 class Skill {
-
+    // TODO: Idk how to implement this class, but skills are basically rechargeable unique attacks
 };
 
 

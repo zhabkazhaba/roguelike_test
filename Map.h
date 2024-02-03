@@ -7,7 +7,7 @@
 
 
 class Map {
-
+    // TODO: Map class is set to handle many things: properties of cells, random generations, dynamic cell state control
 };
 
 

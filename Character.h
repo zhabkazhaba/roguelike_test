@@ -11,7 +11,10 @@ const unsigned int MAX_LEVEL = 60;
 #include <vector>
 #include "Class.h"
 #include "Skill.h"
-#include "Item.h"
+#include "Item/Item.h"
+
+// TODO: I will handle this class by myself. It should unify all characters stats + control various things
+// TODO: Such as distribution of skill points, inventory, leveling up, dying, having special effects and so on.
 
 class Character {
 private:
@@ -22,6 +25,8 @@ private:
     } InitStats;
 
     struct {
+        unsigned int hp;
+        unsigned int xp;
         unsigned int level;
         unsigned int exp;
         std::vector<Item> char_items;
@@ -37,8 +42,8 @@ public:
 
     void setName(std::string name);
     void setClass(Class *ch_class);
-    void setLevel(int level);
-    void setExp(int exp);
+    void setLevel(unsigned int level);
+    void setExp(unsigned int exp);
 };
 
 

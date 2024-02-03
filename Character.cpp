@@ -42,11 +42,11 @@ void Character::setClass(Class *ch_class) {
     InitStats.char_class = ch_class;
 }
 
-void Character::setLevel(int level) {
+void Character::setLevel(unsigned int level) {
     level < MAX_LEVEL ? MutStats.level = level : throw std::out_of_range("Level should be less than 60");
 }
 
-void Character::setExp(int exp) {
+void Character::setExp(unsigned int exp) {
     MutStats.exp = exp;
 }
 

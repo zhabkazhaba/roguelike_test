@@ -7,7 +7,7 @@
 
 
 class Class {
-
+    //TODO: All roguelikes have different classes that grant different stats and abilities. I will handle this class probs
 };
 
 

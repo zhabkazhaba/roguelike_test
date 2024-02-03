@@ -7,7 +7,7 @@
 
 
 class Item {
-
+    // TODO:: This is a base class. All items have weight, quantity, price, "cursed" state.
 };
 
 
