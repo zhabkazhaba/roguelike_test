@@ -10,4 +10,7 @@ add_executable(roguelike_test
         Map.cpp
         Character.cpp
         Class.h
-        Class.cpp)
+        Class.cpp
+        Item.h
+        Item.cpp
+        Skill.cpp)
