@@ -5,10 +5,10 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(roguelike_test
         main.cpp
-        Character.h
-        Map.h
-        Map.cpp
-        Character.cpp
+        Actor/Character.h
+        Game/Map.h
+        Game/Map.cpp
+        Actor/Character.cpp
         Class.h
         Class.cpp
         Item/Item.h
@@ -22,4 +22,12 @@ add_executable(roguelike_test
         Item/Weapon.cpp
         Item/Weapon.h
         Parser.h
-        Parser.cpp)
+        Parser.cpp
+        Actor/NPC.h
+        Actor/NPC.cpp
+        Actor/Actor.h
+        Actor/Actor.cpp
+        Game/Game.h
+        Game/Game.cpp
+        Actor/Attribute.h
+        Actor/Attribute.cpp)
