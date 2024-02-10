@@ -30,4 +30,11 @@ add_executable(roguelike_test
         Game/Game.h
         Game/Game.cpp
         Actor/Attribute.h
-        Actor/Attribute.cpp)
+        Actor/Attribute.cpp
+        Game/Cell.h
+        Game/Cell.cpp
+        Game/Input.h
+        Game/Input.cpp
+        Game/Actions.h
+        Game/Actions.cpp
+)

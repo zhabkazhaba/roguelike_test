@@ -3,11 +3,25 @@
 
 
 #include <vector>
-#include "../Actor/Actor.h"
+#include "Map.h"
+#include "Input.h"
+#include "Actions.h"
+#include "../Actor/Character.h"
 
 class Game {
 private:
-    std::vector<Actor> actors;
+    unsigned long turn;
+    std::vector<Map> levels;
+protected:
+    Map *current_level;
+    std::string current_action;
+    Character *player;
+public:
+    Game();
+    Game(Game const &) = delete;
+    ~Game();
+    void handleInput(Input input);
+    void advanceTurn(Input input);
 };
 
 

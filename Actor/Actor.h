@@ -29,7 +29,9 @@ protected:
     struct {
         std::string name;
         unsigned int hp;
+        unsigned int max_hp;
         unsigned int mp;
+        unsigned int max_mp;
         unsigned int level;
         unsigned int exp;
         unsigned int exp_required;
@@ -41,8 +43,7 @@ protected:
      */
     std::vector<std::pair<Item, unsigned int>> inventory;
 
-    // Placeholder for position (x,y)
-    std::pair<int, int> position;
+    std::pair<unsigned short, unsigned short> position;
 public:
     Actor();
     Actor(Actor &other);
@@ -50,7 +51,14 @@ public:
 
     virtual bool stateCheck() = 0;
 
-    void changePosition(short x, short y);
+    void setHp(unsigned int hp);
+    void setMp(unsigned int mp);
+    void setPosition(unsigned short x, unsigned short y);
+    void setPosition(std::pair<unsigned short, unsigned short> pos);
+
+    unsigned int getHp() const;
+    unsigned int getMp() const;
+    std::pair<unsigned short, unsigned short> getPosition() const;
 };
 
 

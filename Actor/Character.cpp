@@ -4,6 +4,8 @@
 #include <stdexcept>
 #include <iostream>
 
+Character *Character::instance = nullptr;
+
 Character::Character() : Actor() {
     CharacterSpecification.char_class = nullptr;
     CharacterSpecification.char_skills = {};
@@ -84,22 +86,28 @@ void Character::distributePoints(unsigned int points, const std::string &stat) {
         if (stat == "strength") {
             BaseStats.strength += points;
             ActorStats.hp += points * 10;
+            ActorStats.max_hp += points * 10;
         } else if (stat == "intelligence") {
             BaseStats.intelligence += points;
             ActorStats.mp += points * 10;
+            ActorStats.max_mp += points * 10;
         } else if (stat == "agility") {
             BaseStats.agility += points;
             ActorStats.hp += points * 5;
+            ActorStats.max_hp += points * 5;
         } else if (stat == "endurance") {
             BaseStats.endurance += points;
             ActorStats.hp += points * 15;
+            ActorStats.max_hp += points * 15;
         } else if (stat == "luck") {
             BaseStats.luck += points;
             ActorStats.hp += points * 3;
             ActorStats.mp += points * 3;
+            ActorStats.max_hp += points * 3;
+            ActorStats.max_mp += points * 3;
         } else if (stat == "corruption") {
             BaseStats.corruption += points;
-            ActorStats.hp -= points * 5;
+            //ActorStats.hp -= points * 5;
         } else {
             throw std::invalid_argument("Invalid stat");
         }
