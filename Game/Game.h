@@ -20,6 +20,8 @@ public:
     Game();
     Game(Game const &) = delete;
     ~Game();
+    int GameLoop();
+    void initializeGame();
     void handleInput(Input input);
     void advanceTurn(Input input);
 };

@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "ComplexActions.h"
 
 Game::Game() {
     turn = 0;
@@ -22,33 +23,42 @@ void Game::handleInput(Input input) {
         {
             std::pair<unsigned short, unsigned short> target_position = std::make_pair(player->getPosition().first,
                                                                                        player->getPosition().second + 1);
-            moveActorTo moveActorTo(current_level, player, target_position);
+            moveActorTo command(current_level, player, target_position);
+            command.execute();
         }
             break;
         case InputType::MOVE_DOWN:
         {
             std::pair<unsigned short, unsigned short> target_position = std::make_pair(player->getPosition().first,
                                                                                        player->getPosition().second - 1);
-            moveActorTo moveActorTo(current_level, player, target_position);
+            moveActorTo command(current_level, player, target_position);
+            command.execute();
         }
             break;
         case InputType::MOVE_LEFT:
         {
             std::pair<unsigned short, unsigned short> target_position = std::make_pair(player->getPosition().first - 1,
                                                                                        player->getPosition().second);
-            moveActorTo moveActorTo(current_level, player, target_position);
+            moveActorTo command(current_level, player, target_position);
+            command.execute();
         }
             break;
         case InputType::MOVE_RIGHT:
         {
             std::pair<unsigned short, unsigned short> target_position = std::make_pair(player->getPosition().first + 1,
                                                                                        player->getPosition().second);
-            moveActorTo moveActorTo(current_level, player, target_position);
+            moveActorTo command(current_level, player, target_position);
+            command.execute();
         }
             break;
-        case InputType::ATTACK:
-            //TODO: Implement simple attack
+        case InputType::ATTACK: {
+            //TODO: Implement attack input
+            int x, y = 0;
+            std::pair<unsigned short, unsigned short> target_position = std::make_pair(x, y);
+            CharacterAttack command(current_level, player, target_position);
+            command.execute();
             break;
+        }
         case InputType::HEAL:
             //TODO: Implement simple heal
             break;

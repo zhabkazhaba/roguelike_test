@@ -34,9 +34,9 @@ class dealDamageOnce : public Action {
 private:
     Actor *dealer;
     Actor *target;
-    int damage;
+    unsigned int damage;
 public:
-    dealDamageOnce(Actor *deaker, Actor *target, int damage);
+    dealDamageOnce(Actor *dealer, Actor *target, unsigned int damage);
     void execute() override;
 };
 
@@ -44,9 +44,9 @@ class healOnce : public Action {
 private:
     Actor *healer;
     Actor *target;
-    int heal;
+    unsigned int heal;
 public:
-    healOnce(Actor *healer, Actor *target, int heal);
+    healOnce(Actor *healer, Actor *target, unsigned int heal);
     void execute() override;
 };
 

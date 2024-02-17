@@ -1,4 +1,5 @@
 #include "Character.h"
+#include "../Utility/chance.hpp"
 
 #include <utility>
 #include <stdexcept>
@@ -69,6 +70,16 @@ bool Character::stateCheck() {
         levelUp();
     }
     return true;
+}
+
+unsigned int Character::calculateDamage() const {
+    //TODO: Implement better damage calculation. Also divide phys and magic damage + weapons
+    chance damage_chance(30, 70);
+    std::pair <unsigned int, unsigned int> damage_range = damage_chance(BaseStats.strength);
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<unsigned int> dis(damage_range.first, damage_range.second);
+    return dis(gen);
 }
 
 void Character::levelUp() {

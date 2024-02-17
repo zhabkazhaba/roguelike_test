@@ -35,12 +35,14 @@ void moveActorTo::execute() {
     }
 }
 
-dealDamageOnce::dealDamageOnce(Actor *dealer, Actor *target, int damage) : dealer(dealer), target(target), damage(damage) {}
+dealDamageOnce::dealDamageOnce(Actor *dealer, Actor *target, unsigned int damage)
+                             : dealer(dealer), target(target), damage(damage) {}
 void dealDamageOnce::execute() {
     target->setHp(target->getHp() - damage);
 }
 
-healOnce::healOnce(Actor *healer, Actor *target, int heal) : healer(healer), target(target), heal(heal) {}
+healOnce::healOnce(Actor *healer, Actor *target, unsigned int heal)
+                 : healer(healer), target(target), heal(heal) {}
 void healOnce::execute() {
     target->setHp(target->getHp() + heal);
 }

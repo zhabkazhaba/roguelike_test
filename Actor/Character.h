@@ -45,6 +45,7 @@ public:
     void setExp(unsigned int exp);
 
     bool stateCheck() override;
+    unsigned int calculateDamage() const override;
 
     void levelUp();
 

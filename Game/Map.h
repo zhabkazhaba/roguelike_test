@@ -11,8 +11,6 @@ private:
     unsigned int level;
     std::map<std::pair<unsigned short, unsigned short>, Cell> cells;
 public:
-    //void moveFromTo(std::pair<unsigned short, unsigned short> from, std::pair<unsigned short, unsigned short> to);
-    //void moveActorTo(Actor *actor, std::pair<unsigned short, unsigned short> to);
     Cell* getCellAt(std::pair<unsigned short, unsigned short> position);
 };
 

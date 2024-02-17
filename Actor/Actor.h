@@ -7,6 +7,7 @@
 
 #include <string>
 #include <vector>
+#include <random>
 #include "../Class.h"
 #include "../Skill.h"
 #include "../Item/Item.h"
@@ -50,6 +51,7 @@ public:
     ~Actor();
 
     virtual bool stateCheck() = 0;
+    virtual unsigned int calculateDamage() const = 0;
 
     void setHp(unsigned int hp);
     void setMp(unsigned int mp);
