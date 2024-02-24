@@ -47,6 +47,8 @@ add_executable(roguelike_test
         src/Utility/constants.h
         src/Utility/jsonMaker/jsonMaker.h
         src/Utility/jsonMaker/jsonMaker.cpp
+        src/Item/Consumable.h
+        src/Item/Consumable.cpp
 )
 
 target_link_libraries(roguelike_test PRIVATE nlohmann_json::nlohmann_json)
