@@ -8,8 +8,9 @@ enum readMode {
     NPC,
     CLASS,
     ABILITY,
-    WEAPON
-};
+    WEAPON,
+    CHAR_SAVE
+}
 
 class Parser {
 private:
@@ -21,6 +22,7 @@ public:
     using class_tuple = std::tuple<std::string, std::map<std::string, int>, std::string>;
     using ability_tuple = std::tuple<std::string, std::vector<Action>, std::string>;
     using weapon_tuple = std::tuple<std::string, std::map<std::string, int>, std::string>;
+    using char_tuple = std::tuple<std::string, std::string, std::string, std::vector<int>, std::map<std::string, int>, std::string>;
 
     Parser();
     Parser(readMode init_mode, const std::string& init_file);
@@ -35,6 +37,7 @@ public:
     class_tuple parseClass();
     //ability_tuple parseAbility();
     weapon_tuple parseWeapon();
+    char_tuple parseChar();
 };
 
 

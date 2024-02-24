@@ -43,6 +43,7 @@ void Parser::openFileIn(const std::string &input) {
     }
 }
 
+[[deprecated("This function is deprecated for now, use specific parse functions instead")]]
 void Parser::parse() {
     if (!file.is_open())
         openFileIn();
@@ -58,6 +59,9 @@ void Parser::parse() {
             break;
         case readMode::WEAPON:
             parseWeapon();
+            break;
+        case readMode::CHAR_SAVE:
+            parseChar();
             break;
         default:
             std::cerr << "jsonParser Error: Invalid mode!" << std::endl;
@@ -101,5 +105,18 @@ Parser::weapon_tuple Parser::parseWeapon() {
     std::map <std::string, int> stats = j["stats"];
     std::string description = j["description"];
     return weapon_tuple {name, stats, description};
+}
+
+Parser::char_tuple Parser::parseChar() {
+    if (!file.is_open())
+        openFileIn();
+    nlohmann::json j = nlohmann::json::parse(file);
+    std::string name = j["name"];
+    std::string gender = j["gender"];
+    std::string ch_class = j["class"];
+    std::vector<int> skills = j["skills"];
+    std::map <std::string, int> stats = j["stats"];
+    std::string description = j["description"];
+    return char_tuple {name, gender, ch_class, skills, stats, description};
 }
 

@@ -12,7 +12,8 @@ private:
         NPC,
         CLASS,
         ABILITY,
-        WEAPON
+        WEAPON,
+        CHAR_SAVE
     };
     std::string filename;
     Modes mode;
@@ -25,7 +26,6 @@ public:
     void openFileOut(const std::string& input = "");
     void openFileIn(const std::string& input = "");
     void closeFile();
-    void readFile(const std::string& input = "");
     void setMode(Modes mode);
     void setFilename(const std::string& input);
     void write();

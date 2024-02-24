@@ -1,0 +1,10 @@
+#ifndef ROGUELIKE_TEST_CONSUMABLE_H
+#define ROGUELIKE_TEST_CONSUMABLE_H
+
+
+class Consumable {
+
+};
+
+
+#endif //ROGUELIKE_TEST_CONSUMABLE_H

@@ -1,0 +1,4 @@
+Enemies: enemy_xx
+Items: armor_xx, weapon_xx, artifact_xx, consumable_xx
+Skills: skill_xx_lv_xx (skill_xx_lv_1 is the base skill, skill_xx_lv_2 is the first upgrade, etc.)
+Player saves: player_xx

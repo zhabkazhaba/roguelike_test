@@ -67,8 +67,7 @@ void jsonMaker::write() {
         return;
     }
     switch (mode) {
-        case Modes::NPC:
-        {
+        case Modes::NPC: {
             std::cout << "Enter NPC name: ";
             std::string name;
             std::getline(std::cin, name);
@@ -88,8 +87,7 @@ void jsonMaker::write() {
                     "}\n";
             break;
         }
-        case Modes::CLASS:
-        {
+        case Modes::CLASS: {
             std::cout << "Enter class name: ";
             std::string name;
             std::cin >> name;
@@ -108,14 +106,15 @@ void jsonMaker::write() {
                     "}\n";
             break;
         }
-        case Modes::ABILITY:
+        case Modes::ABILITY: { // Structure in development
             file << "{\n"
                     "\t\"name\": \"\",\n"
                     "\t\"commands\": [],\n"
                     "\t\"description\": \"\",\n"
                     "}\n";
             break;
-        case Modes::WEAPON:
+        }
+        case Modes::WEAPON: {
             file << "{\n"
                     "\t\"name\": \"\",\n"
                     "\t\"damage\": 0,\n"
@@ -123,6 +122,26 @@ void jsonMaker::write() {
                     "\t\"weight\": 0,\n"
                     "\t\"description\": \"\"\n"
                     "}";
+            break;
+        }
+
+        case CHAR_SAVE:
+            file << "{\n"
+                    "\t\"name\": \"\",\n"
+                    "\t\"gender\": \"\",\n"
+                    "\t\"class\": \"\",\n"
+                    "\t\"skills\": [],\n"
+                    "\t\"stats\":\n"
+                    "\t{\n"
+                    "\t\t\"strength\": 0,\n"
+                    "\t\t\"intelligence\": 0,\n"
+                    "\t\t\"agility\": 0,\n"
+                    "\t\t\"endurance\": 0,\n"
+                    "\t\t\"luck\": 0,\n"
+                    "\t\t\"corruption\": 0\n"
+                    "\t},\n"
+                    "\t\"description\": \"\"\n"
+                    "}\n";
             break;
     }
 }
