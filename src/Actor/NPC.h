@@ -11,6 +11,8 @@
 class NPC : public Actor {
 private:
     unsigned int spawn_rate;
+    unsigned int attack_strength;
+    unsigned int exp_reward;
 public:
     NPC();
     NPC(NPC &other);

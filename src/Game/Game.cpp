@@ -1,5 +1,5 @@
 #include "Game.h"
-#include "ComplexActions.h"
+#include "../Actions/ComplexActions.h"
 
 Game::Game() {
     turn = 0;
@@ -67,6 +67,5 @@ void Game::handleInput(Input input) {
 
 void Game::advanceTurn(Input input) {
     handleInput(input);
-
     turn++;
 }

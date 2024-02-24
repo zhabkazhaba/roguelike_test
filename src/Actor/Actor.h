@@ -8,8 +8,8 @@
 #include <string>
 #include <vector>
 #include <random>
-#include "../Class.h"
-#include "../Skill.h"
+#include "Class.h"
+#include "../Actions/Skill.h"
 #include "../Item/Item.h"
 #include "Attribute.h"
 

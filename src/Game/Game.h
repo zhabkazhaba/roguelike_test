@@ -5,7 +5,7 @@
 #include <vector>
 #include "Map.h"
 #include "Input.h"
-#include "Actions.h"
+#include "../Actions/Actions.h"
 #include "../Actor/Character.h"
 
 class Game {

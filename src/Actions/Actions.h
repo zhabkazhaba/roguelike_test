@@ -2,7 +2,7 @@
 #define ROGUELIKE_TEST_ACTIONS_H
 
 #include "../Actor/Actor.h"
-#include "Map.h"
+#include "../Game/Map.h"
 
 class Action {
 protected:

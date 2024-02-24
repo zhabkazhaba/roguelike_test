@@ -44,6 +44,7 @@ public:
     void setLevel(unsigned int level);
     void setExp(unsigned int exp);
 
+    //TODO: Place stateCheck to Map or Game class
     bool stateCheck() override;
     unsigned int calculateDamage() const override;
 
